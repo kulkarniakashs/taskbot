@@ -1,27 +1,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+  margin: 0px;
+  padding: 0px;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.border {
+  height: 3px;
+  background: black;
 }
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.block1{
+  border: 2px solid black;
+  border-radius: 4px;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.ulNum {
+  list-style-type: circle;
+}
+.ele:hover{
+  transform: scale(1.01);
+  box-shadow: 12px 12px 12px rgb(0, 0, 0,0.1) ,
+  -10px -10px 10px white;
+  
+}
+.roboto-condensed {
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.kanit-semibold {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.roboto-slab{
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight:500;
+  font-style: normal;
+}
+.nerko-one-regular {
+  font-family: "Nerko One", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+.banner button{
+  margin: auto;
 }
