@@ -16,7 +16,7 @@ function Navbar() {
       <ul className='flex justify-between items-end gap-6 kanit-semibold'>
        <li> <Link href="/">Home</Link></li>
        <li> <Link href="/todo" >TodoList</Link></li>
-       <li> <Link href="/chatbot">Chatbot</Link></li>
+       <li> <Link href="/gyanguru">GyanGuru</Link></li>
        <li> <Link href="/summarizer">Summarizer</Link></li>
       </ul>
     </nav>

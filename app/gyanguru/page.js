@@ -11,7 +11,15 @@ export default function Chatbot() {
   const handleInputChange = (event) => {
     setMessage(event.target.value);
   };
-
+  useEffect(() => {
+      let newChat = JSON.parse(localStorage.getItem("chatStore"));
+      
+      if(newChat){
+        setChat(newChat);
+      }
+    return () => {
+    };
+  }, []);
   const handleSendMessage = async() => {
     if (message.trim() !== '') {
       const newMessage = { sender: 'User', text: message };
@@ -22,6 +30,7 @@ export default function Chatbot() {
       // Simulate bot reply
       const botMessage = { sender: 'Bot', text: botReply };
       setChat((prevChat) => [...prevChat, botMessage]);
+      localStorage.setItem('chatStore',JSON.stringify(chat))
     }
   };
 
@@ -38,7 +47,7 @@ export default function Chatbot() {
     <div className="flex flex-col items-center justify-start min-h-[90vh] bg-gray-100">
       <div className="w-full max-w-[65vw] p-5 bg-white rounded-lg shadow-lg mt-4">
         <div className="mb-4">
-          <h2 className="text-2xl font-bold text-center mb-2">Chatbot</h2>
+          <h2 className="text-2xl font-bold text-center mb-2">GyanGuru</h2>
           <div
             id="chatWindow"
             className="h-80 overflow-y-auto border border-gray-300 rounded p-4 bg-gray-50 h-96"
