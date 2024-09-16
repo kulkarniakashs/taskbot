@@ -3,6 +3,7 @@ import { geminiAPI } from '@/Action/geminiAPI';
 import Navbar from '@/components/Navbar';
 import TextWithStyles from '@/components/TextWithStyle';
 import { useState, useEffect, useRef } from 'react';
+import { MdAutoDelete } from "react-icons/md";
 export default function Chatbot() {
   const [message, setMessage] = useState('');
   const [chat, setChat] = useState([]);
@@ -40,23 +41,31 @@ export default function Chatbot() {
       chatWindowRef.current.scrollTop = chatWindowRef.current.scrollHeight;
     }
   }, [chat]);
-
+  const clearHistory = ()=>{
+    console.log("button clicked");
+    localStorage.removeItem("chatStore")
+    setChat([]);
+  }
   return (
     <>
     <Navbar/>
     <div className="flex flex-col items-center justify-start min-h-[90vh] bg-gray-100">
       <div className="w-full max-w-[65vw] p-5 bg-white rounded-lg shadow-lg mt-4">
         <div className="mb-4">
-          <h2 className="text-2xl font-bold text-center mb-2">GyanGuru</h2>
+          <div className='flex items-center justify-center relative'>
+          <h2 className="text-2xl font-bold text-center mb-2" >GyanGuru</h2> <button className='absolute right-0' onClick={clearHistory}><MdAutoDelete className='h-6 w-6'/></button>
+          </div>
           <div
             id="chatWindow"
             className="h-80 overflow-y-auto border border-gray-300 rounded p-4 bg-gray-50 h-96"
             ref={chatWindowRef} // Attach the ref to the chat window
           >
-            {chat.map((chatMessage, index) => (
+          {chat &&
+          
+          chat.map((chatMessage, index) => (
               <div
                 key={index}
-                className={`mb-2 ${chatMessage.sender === 'User' ? 'text-right' : 'text-left'}`}
+                className={`mb-2 ${chatMessage.sender === 'User' ? 'text-right' : 'text-left'}`} 
               >
                 <span
                   className={`inline-block px-3 py-2 rounded-lg ${
