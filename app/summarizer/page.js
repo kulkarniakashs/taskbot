@@ -62,10 +62,11 @@ export default function Summarize() {
           />
 
           <div>
-            <p className="text-5xl font-semibold">or</p>
+            <p className="text-4xl font-thin">OR</p>
           </div>
 
           <input
+            className='border-2 BorderCSS p-8'
             type="file"
             accept=".txt"
             onChange={handleFileChange}
@@ -78,7 +79,7 @@ export default function Summarize() {
       </form>
 
       {summary && (
-        <div className="flex flex-col justify-center items-center m-5">
+        <div className="flex flex-col justify-center items-center m-5 BorderCSS p-3 bg-amber-50">
           <h2>Summary</h2>
           <p className="max-w-[80vw]">{summary}</p>
         </div>

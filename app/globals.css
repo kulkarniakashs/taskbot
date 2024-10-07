@@ -48,3 +48,20 @@
 .banner button{
   margin: auto;
 }
+.hero-section{
+  background-image: url(/myths-busted-1024x708.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 60vh;
+}
+.BorderCSS{
+ border: solid 1px rgb(37, 36, 36);
+}
+.containerTodo{
+  background-color: white;
+}
+.main-main{
+  background-color: rgb(245, 242, 238);
+  
+}

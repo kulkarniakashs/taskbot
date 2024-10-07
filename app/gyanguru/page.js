@@ -49,7 +49,7 @@ export default function Chatbot() {
   return (
     <>
     <Navbar/>
-    <div className="flex flex-col items-center justify-start min-h-[90vh] bg-gray-100">
+    <div className="flex flex-col items-center justify-start min-h-[90vh] bg-gray-50">
       <div className="w-full max-w-[65vw] p-5 bg-white rounded-lg shadow-lg mt-4">
         <div className="mb-4">
           <div className='flex items-center justify-center relative'>
