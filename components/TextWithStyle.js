@@ -1,5 +1,3 @@
-import React from 'react';
-
 const TextWithStyles = ({ text }) => {
   const parseText = (text) => {
     // Split text by newlines for paragraphs or headings
