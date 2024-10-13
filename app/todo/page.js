@@ -85,7 +85,7 @@ function App() {
     SetshowFinished(!showFinished);
   };
 
-  // Check overdue tasks based on time and send notification for high-priority tasks
+
   useEffect(() => {
     const checkOverdueTasks = () => {
       const currentTime = new Date();
@@ -96,13 +96,6 @@ function App() {
         taskEndTime.setMinutes(endMinutes);
 
         if (!task.isCompleted && taskEndTime < currentTime) {
-          if (task.priority === "High" && Notification.permission === "granted") {
-            // Send a notification if the task is high priority
-            new Notification("Task Overdue", {
-              body: `Your high-priority task "${task.Todo}" is overdue!`,
-              icon: "/newLogo.png",
-            });
-          }
           return { ...task, isOverdue: true };
         }
         return { ...task, isOverdue: false };
@@ -110,11 +103,9 @@ function App() {
       setTodos(updatedTodos);
       saveToLS();
     };
-
     const interval = setInterval(checkOverdueTasks, 60000); // Check every minute
     return () => clearInterval(interval);
   }, [todos]);
-
   return (
     <div className='bg-gray-100 h-screen'>
       <Navbar/>

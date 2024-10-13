@@ -14,7 +14,6 @@ export default function Chatbot() {
   };
   useEffect(() => {
       let newChat = JSON.parse(localStorage.getItem("chatStore"));
-      
       if(newChat){
         setChat(newChat);
       }
@@ -34,7 +33,6 @@ export default function Chatbot() {
       localStorage.setItem('chatStore',JSON.stringify(chat))
     }
   };
-
   // Scroll to the latest message when chat updates
   useEffect(() => {
     if (chatWindowRef.current) {
